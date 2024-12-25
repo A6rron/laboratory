@@ -1,4 +1,5 @@
-/* Base Variables */
+/* 1. Variables
+-------------------------------- */
 :root {
     --primary-color: #ffffff;
     --secondary-color: #666666;
@@ -9,7 +10,8 @@
     --transition: all 0.3s ease;
 }
 
-/* Reset & Base Styles */
+/* 2. Base Styles
+-------------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -23,13 +25,16 @@ body {
     line-height: 1.6;
 }
 
+/* 3. Layout Components
+-------------------------------- */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
-/* Header & Navigation */
+/* 4. Header & Navigation
+-------------------------------- */
 .top-header {
     padding: 2rem 0;
     background: transparent;
@@ -39,6 +44,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header-logo {
+    height: 200px;
+    width: auto;
 }
 
 .main-nav {
@@ -65,11 +75,10 @@ body {
     transition: var(--transition);
 }
 
-
-
-/* Hero Section */
+/* 5. Hero Section
+-------------------------------- */
 .hero-section {
-    padding: 6rem 0 6rem;
+    padding: 6rem 0;
     text-align: center;
 }
 
@@ -87,16 +96,6 @@ body {
     color: var(--text-light);
     max-width: 600px;
     margin: 0 auto 2rem;
-}
-
-.main-description a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.main-description a:hover {
-    opacity: 0.8;
 }
 
 /* CTA Buttons */
@@ -121,13 +120,6 @@ body {
     background: transparent;
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
-    box-shadow: none;
-}
-
-.cta-button.primary:hover {
-    background: var(--primary-color);
-    color: var(--background-color);
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
 
 .cta-button.secondary {
@@ -136,11 +128,8 @@ body {
     color: var(--primary-color);
 }
 
-.cta-button.secondary:hover {
-    border-color: var(--primary-color);
-}
-
-/* Features Section - Paragraph Style */
+/* 6. Features Section
+-------------------------------- */
 .features-content {
     max-width: 1000px;
     margin: 8rem auto;
@@ -164,12 +153,8 @@ body {
     transition: var(--transition);
 }
 
-/* Remove old features styles */
-.features-grid, .features-list {
-    display: none;
-}
-
-/* Metrics Section */
+/* 7. Metrics Section
+-------------------------------- */
 .metrics-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -190,7 +175,8 @@ body {
     color: var(--text-light);
 }
 
-/* Footer */
+/* 8. Footer
+-------------------------------- */
 .footer {
     background: var(--background-color);
     border-top: 1px solid var(--border-color);
@@ -199,13 +185,14 @@ body {
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
 }
 
 .footer-section h4 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: var(--primary-color);
+    font-size: 1.1rem;
 }
 
 .footer-section ul {
@@ -213,47 +200,23 @@ body {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.footer-section ul li a {
     color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
 }
 
-/* Add responsive design */
-@media (max-width: 768px) {
-    .features-list {
-        padding: 0 2rem;
-        gap: 3rem;
-    }
-    
-    .feature-item h3 {
-        font-size: 1.25rem;
-    }
-    
-    .feature-item p {
-        font-size: 1rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
+.footer-section ul li a:hover {
+    color: var(--primary-color);
 }
 
-@media (max-width: 480px) {
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .metrics-section {
-        grid-template-columns: 1fr;
-    }
-}
-
-.header-logo {
-    height: 200px; /* Increased from 150px */
-    width: auto;
-}
-
+/* 9. Utilities
+-------------------------------- */
 .tiny-text {
-    font-size: 0.70em; /* Equivalent to three nested small tags (0.8 * 0.8 * 0.8 ≈ 0.42) */
+    font-size: 0.70em;
 }
 
 .opsa-link {
@@ -263,34 +226,14 @@ body {
     transition: var(--transition);
 }
 
-.opsa-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--primary-color);
-    transition: var(--transition);
+.social-link {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.opsa-link:hover::after {
-    width: 100%;
+.social-link:hover {
+    color: #333;
 }
 
-.opsa-link:hover {
-    opacity: 0.8;
-}
 
-/* Add responsive design for features content */
-@media (max-width: 768px) {
-    .features-content p {
-        font-size: 1.25rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .features-content p {
-        font-size: 1.125rem;
-    }
-}
