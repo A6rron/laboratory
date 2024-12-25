@@ -1,11 +1,12 @@
 /* Base Variables */
 :root {
     --primary-color: #ffffff;
-    --secondary-color: #a0a0a0;
-    --background-color: #000000;
-    --border-color: #333333;
-    --text-light: #cccccc;
+    --secondary-color: #666666;
+    --background-color: #0a0a0a;
+    --border-color: #1a1a1a;
+    --text-light: #999999;
     --accent-color: #ffffff;
+    --transition: all 0.3s ease;
 }
 
 /* Reset & Base Styles */
@@ -30,9 +31,8 @@ body {
 
 /* Header & Navigation */
 .top-header {
-    padding: 1.5rem 0;
-    background: var(--background-color);
-    border-bottom: 1px solid var(--border-color);
+    padding: 2rem 0;
+    background: transparent;
 }
 
 .header-content {
@@ -50,24 +50,36 @@ body {
     color: var(--text-light);
     text-decoration: none;
     font-size: 0.875rem;
-    transition: color 0.2s ease;
+    position: relative;
+    padding-bottom: 0.25rem;
 }
 
-.main-nav a:hover {
-    color: var(--primary-color);
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-color);
+    transition: var(--transition);
 }
+
+
 
 /* Hero Section */
 .hero-section {
-    padding: 6rem 0;
+    padding: 6rem 0 6rem;
     text-align: center;
 }
 
 .main-heading {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    background: linear-gradient(to right, #fff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .main-description {
@@ -75,6 +87,16 @@ body {
     color: var(--text-light);
     max-width: 600px;
     margin: 0 auto 2rem;
+}
+
+.main-description a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.main-description a:hover {
+    opacity: 0.8;
 }
 
 /* CTA Buttons */
@@ -90,21 +112,26 @@ body {
     font-size: 0.875rem;
     font-weight: 500;
     text-decoration: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-    transition: all 0.2s ease;
+    padding: 1rem 2rem;
+    border-radius: 100px;
+    transition: var(--transition);
 }
 
 .cta-button.primary {
-    background: var(--primary-color);
-    color: var(--background-color);
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: none;
 }
 
 .cta-button.primary:hover {
-    background: var(--text-light);
+    background: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
 
 .cta-button.secondary {
+    background: transparent;
     border: 1px solid var(--border-color);
     color: var(--primary-color);
 }
@@ -113,30 +140,33 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Feature Cards */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding: 4rem 0;
+/* Features Section - Paragraph Style */
+.features-content {
+    max-width: 1000px;
+    margin: 8rem auto;
+    padding: 0 2rem;
+    text-align: center;
 }
 
-.feature-card {
-    padding: 2rem;
-    background: var(--background-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    transition: transform 0.2s ease;
+.features-content p {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    line-height: 1.8;
+    letter-spacing: -0.02em;
 }
 
-.feature-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--primary-color);
+.feature-highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+    background: linear-gradient(to right, #fff, #999);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: var(--transition);
 }
 
-.feature-card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.25rem;
+/* Remove old features styles */
+.features-grid, .features-list {
+    display: none;
 }
 
 /* Metrics Section */
@@ -144,14 +174,16 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    padding: 4rem 0;
+    padding: 6rem 0;
     text-align: center;
 }
 
 .metric-number {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--accent-color);
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #fff, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .metric-label {
@@ -183,4 +215,82 @@ body {
 .footer-section ul li {
     margin-bottom: 0.5rem;
     color: var(--text-light);
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+    .features-list {
+        padding: 0 2rem;
+        gap: 3rem;
+    }
+    
+    .feature-item h3 {
+        font-size: 1.25rem;
+    }
+    
+    .feature-item p {
+        font-size: 1rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .metrics-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.header-logo {
+    height: 200px; /* Increased from 150px */
+    width: auto;
+}
+
+.tiny-text {
+    font-size: 0.70em; /* Equivalent to three nested small tags (0.8 * 0.8 * 0.8 ≈ 0.42) */
+}
+
+.opsa-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    position: relative;
+    transition: var(--transition);
+}
+
+.opsa-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.opsa-link:hover::after {
+    width: 100%;
+}
+
+.opsa-link:hover {
+    opacity: 0.8;
+}
+
+/* Add responsive design for features content */
+@media (max-width: 768px) {
+    .features-content p {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-content p {
+        font-size: 1.125rem;
+    }
 }
