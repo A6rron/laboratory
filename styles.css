@@ -33,6 +33,11 @@ body {
     padding: 0 2rem;
 }
 
+/* Added consistent gap between sections */
+section {
+    margin-bottom: 2rem; /* Adjust the value as needed */
+}
+
 /* 4. Header & Navigation
 -------------------------------- */
 .top-header {
@@ -44,6 +49,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 
 .header-logo {
@@ -62,17 +68,27 @@ body {
     font-size: 0.875rem;
     position: relative;
     padding-bottom: 0.25rem;
+    transition: color 0.3s ease;
 }
 
 .main-nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
     width: 0;
-    height: 1px;
+    height: 2px;
     background: var(--primary-color);
-    transition: var(--transition);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 /* 5. Hero Section
@@ -112,20 +128,39 @@ body {
     font-weight: 500;
     text-decoration: none;
     padding: 1rem 2rem;
-    border-radius: 100px;
+    border-radius: 0;
     transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
 .cta-button.primary {
     background: transparent;
     color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    border: none;
 }
 
 .cta-button.secondary {
     background: transparent;
-    border: 1px solid var(--border-color);
+    border: none;
     color: var(--primary-color);
+}
+
+/* Added hover effect for CTA buttons */
+.cta-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.cta-button:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 /* 6. Features Section
@@ -135,6 +170,7 @@ body {
     margin: 8rem auto;
     padding: 0 2rem;
     text-align: center;
+    gap: 2rem;
 }
 
 .features-content p {
@@ -158,7 +194,7 @@ body {
 .metrics-section {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 3rem;
     padding: 6rem 0;
     text-align: center;
 }
@@ -180,19 +216,19 @@ body {
 .footer {
     background: var(--background-color);
     border-top: 1px solid var(--border-color);
-    padding: 4rem 0;
+    padding: 2rem 0;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .footer-section h4 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--primary-color);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .footer-section ul {
@@ -200,17 +236,35 @@ body {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .footer-section ul li a {
     color: var(--text-light);
     text-decoration: none;
-    transition: var(--transition);
+    transition: color 0.2s ease, width 0.3s ease, left 0.3s ease;
+    position: relative;
+    font-size: 0.9rem;
+}
+
+.footer-section ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: var(--primary-color);
+    transition: width 0.3s ease, left 0.3s ease;
 }
 
 .footer-section ul li a:hover {
     color: var(--primary-color);
+}
+
+.footer-section ul li a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 /* 9. Utilities
@@ -220,10 +274,26 @@ body {
 }
 
 .opsa-link {
-    color: var(--primary-color);
+    color: #ffffff;
     text-decoration: none;
     position: relative;
-    transition: var(--transition);
+    overflow: hidden;
+}
+
+.opsa-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: #ffffff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.opsa-link:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 .social-link {
@@ -233,7 +303,15 @@ body {
 }
 
 .social-link:hover {
-    color: #333;
+    color: #ffffff;
+}
+
+/* 10. Additional Styles for Header Section
+-------------------------------- */
+h3 {
+    font-weight: bold; /* Make the text bold */
+    border-bottom: 2px solid #000; /* Add a bottom border */
+    padding-bottom: 5px; /* Add some space below the text */
 }
 
 
