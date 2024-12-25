@@ -319,11 +319,12 @@ h3 {
 @media (max-width: 768px) {
     .header-content {
         flex-direction: column; /* Stack header elements vertically */
-        align-items: flex-start; /* Align items to the start */
+        align-items: center; /* Center align items for mobile */
+        text-align: center; /* Center align text */
     }
 
     .header-logo {
-        height: 150px; /* Adjust logo size for mobile */
+        display: none; /* Hide logo on mobile */
     }
 
     .main-nav {
