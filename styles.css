@@ -197,6 +197,7 @@ section {
     gap: 3rem;
     padding: 6rem 0;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .metric-number {
@@ -312,6 +313,50 @@ h3 {
     font-weight: bold; /* Make the text bold */
     border-bottom: 2px solid #000; /* Add a bottom border */
     padding-bottom: 5px; /* Add some space below the text */
+}
+
+/* Responsive Styles for Mobile Screens */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column; /* Stack header elements vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    .header-logo {
+        height: 150px; /* Adjust logo size for mobile */
+    }
+
+    .main-nav {
+        display: none; /* Hide the main navigation on mobile */
+    }
+
+    .hero-section {
+        padding: 4rem 1rem; /* Adjust padding for mobile */
+    }
+
+    .main-heading {
+        font-size: 3rem; /* Reduce heading size for mobile */
+    }
+
+    .main-description {
+        font-size: 1rem; /* Adjust description font size */
+    }
+
+    .features-content {
+        padding: 0 1rem; /* Adjust padding for mobile */
+    }
+
+    .metrics-section {
+        grid-template-columns: 1fr; /* Stack metrics vertically */
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack footer sections vertically */
+    }
+
+    .footer-section {
+        margin-bottom: 2rem; /* Add space between footer sections */
+    }
 }
 
 
