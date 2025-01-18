@@ -14,9 +14,10 @@
         <div class="container header-content">
             <img src="/laboratory.png" alt="OPSA Laboratory Logo" class="header-logo">
             <nav class="main-nav">
-                <a href="#blog">Research</a>
+                <a href="#program website">Program</a>
+                <a href="#protocols">Advisors</a>
                 <a href="#protocols">Projects</a>
-                <a href="#hackathons">Programs</a>
+                <a href="#protocols">Faq</a>
             </nav>
         </div>
     </header>
@@ -62,6 +63,57 @@
                 <div class="metric-label">Projects Incubated</div>
             </div>
         </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" style="margin-bottom: 2rem;">
+            <h2 class="faq-heading">FAQ</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-title">What is Laboratory by OPSA?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p>The OPSA Laboratory is a research testing ground focused on exploring future implications of internet technologies and infrastructure protocols, while developing and maintaining core infrastructure software.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-title">How can I join the laboratory program?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p>You can join the laboratory program by clicking on the "Join Laboratory Program" button on our homepage.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-title">What types of projects do you incubate?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p>We incubate projects that focus on protocol development and projects that can benefit open society. Our accelerator program provides dedicated resources to help scale selected projects.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-title">How can I get involved in hackathons?</span>
+                        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                    <div class="accordion-content">
+                        <p>You can get involved in our hackathons by checking our events page or following us on social media for announcements about upcoming events.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer Section -->
@@ -81,16 +133,15 @@
                 <div class="footer-section">
                     <h3>Programs</h3>
                     <ul>
-                        <li><a href="#research">Research Notes</a></li>
-                        <li><a href="#hackathons">Program</a></li>
-                        <li><a href="#accelerator">Accelerator</a></li>
+                        <li><a href="#research blogs">Research Notes</a></li>
+                        <li><a href="#hackathons">Hackathons</a></li>
+                        <li><a href="#Accelerator">Accelerator</a></li>
                     </ul>
                 </div>
                 <!-- Resources Section -->
                 <div class="footer-section">
                     <h3>Resources</h3>
                     <ul>
-                        <li><a href="#blog">Blog</a></li>
                         <li><a href="https://github.com/laboratorybyopsa">GitHub</a></li>
                         <li><a href="https://twitter.com/direct_messages/create/laboratoryopsa">Contact</a></li>
                     </ul>
@@ -98,5 +149,13 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionItem = button.parentElement;
+                accordionItem.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>

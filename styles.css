@@ -53,7 +53,7 @@ section {
 }
 
 .header-logo {
-    height: 200px;
+    height: 300px;
     width: auto;
 }
 
@@ -358,6 +358,75 @@ h3 {
     .footer-section {
         margin-bottom: 2rem; /* Add space between footer sections */
     }
+}
+
+/* 11. FAQ Section Styles
+-------------------------------- */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordion-item {
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+    border-color: #444;
+}
+
+.accordion-header {
+    background-color: #000000;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover {
+    background-color: #000000;
+}
+
+.accordion-title {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.accordion-icon {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    background-color: #0a0a0a;
+    padding: 1rem 1.5rem;
+    display: none;
+    color: #aaa;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+/* Center the FAQ title */
+.faq-heading {
+    text-align: center; /* Center align the FAQ heading */
+}
+
+/* Update active accordion item styles */
+.accordion-item.active .accordion-title {
+    color: #ffffff; /* Change the text color to brighter white when active */
+    text-decoration: underline; /* Add underline to the active item */
 }
 
 
