@@ -281,21 +281,7 @@ section {
     overflow: hidden;
 }
 
-.opsa-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 1px;
-    background: #ffffff;
-    transition: width 0.3s ease, left 0.3s ease;
-}
 
-.opsa-link:hover::after {
-    width: 100%;
-    left: 0;
-}
 
 .social-link {
     color: #666;
